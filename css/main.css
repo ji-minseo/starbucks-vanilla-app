@@ -37,9 +37,11 @@ header .logo {
     margin: auto;
 }
 header .sub-menu {
+    display: flex;
 
 }
 header .sub-menu ul.menu {
+    font-family: Arial, sans-serif;
     display: flex;
 
     
@@ -55,16 +57,19 @@ header .sub-menu ul.menu li::before{
     display: block;
     width: 1px;
     height: 12px;
-    background-color: black;
+    background-color: #e5e5e5;
     position: absolute;
     top:0;
     bottom:0;
     margin:auto;
 }
 
+header .sub-menu ul.menu li:first-child:before{
+    display: none;
+}
+
 header .sub-menu ul.menu li a{
 
-    background-color: white;
     font-size: 12px;
     display: block;
     padding: 11px 16px;
@@ -75,16 +80,35 @@ header .sub-menu ul.menu li a:hover{
     color: #000;
 }
 header .sub-menu .search {
-
+    height: 34px;
+    position: relative;
 
 }
 
 header .sub-menu .search input {
 
-    
+    width: 36px;
+    height: 34px;
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+    color: #777;
+    font-size: 12px;
+    transition: width .4s;
+}
+header .sub-menu .search input:focus {
+    width: 190px;
+    border-color: #669900;
 }
 
 header .sub-menu .search .material-icons{
-
-    
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 5px;
+    margin: auto;
 }
