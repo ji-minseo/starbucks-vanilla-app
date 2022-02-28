@@ -24,11 +24,18 @@ const badgeEl = document.querySelector('header .badges');
 window.addEventListener('scroll', _.throttle(function() {
     if (window.scrollY > 500) {
         //배지 숨기기
-        badgeEl.style.display = 'none';
+        //gsap.to(애니메이션 적용할 요소, 지속시간, 옵션(객체 데이터 {name: value}));
+        gsap.to(badgeEl, .6, {
+            opacity: 0,
+            display: 'none'
+        });
     }
     else {
         //배지 보이기
-        badgeEl.style.display = 'block';
+        gsap.to(badgeEl, .6, {
+            opacity: 1,
+            display: 'block'
+        });
     }
 
 }, 300));
