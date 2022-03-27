@@ -13,8 +13,8 @@ function onYouTubeIframeAPIReady() {
     videoId: 'An6LvWQuj_8',
     playerVars: {
         autoplay: true,
-        loop: true,
-        playList: 'An6LvWQuj_8'
+        loop: 1,
+        playlist: 'An6LvWQuj_8'
     },
     events: {
         onReady: function (event) {
