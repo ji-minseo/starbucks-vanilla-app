@@ -743,7 +743,6 @@ header .badges .badge {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-
 }
 .reserve-store .inner {
     height: 600px;
@@ -770,7 +769,6 @@ header .badges .badge {
 .reserve-store .medal:hover .front {
     transform: rotateY(180deg);
 }
-
 .reserve-store .medal .back {
     transform: rotateY(-180deg);
 
