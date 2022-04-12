@@ -761,6 +761,7 @@ header .badges .badge {
     width: 334px;
     height: 334px;
     backface-visibility: hidden;
+    transition: 1s;
 }
 .reserve-store .medal .front {
     
