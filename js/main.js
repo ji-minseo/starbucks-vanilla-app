@@ -127,3 +127,4 @@ spyEls.forEach(function(spyEl){//foreach -> 해당하는요소를 모두 담은 
         .setClassToggle(spyEl, 'show')//토글할 요소, 토글할 클래스 이름(해당 클래스를 넣었다 뻄)
         .addTo(new ScrollMagic.Controller());//실제로 동작하는 스크롤매직 부분 할당
 });
+//(scroll-spy 클래스가 있는요소가 뷰포트의 .8이상 내려갈 시 show라는 클래스  부착
