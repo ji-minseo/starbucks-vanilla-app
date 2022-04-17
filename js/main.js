@@ -119,11 +119,11 @@ floatingObject('.floating3', 1.5, 20);
 const spyEls = document.querySelectorAll('section.scroll-spy'); //해당클래스 요소들 모두 spyEls에 각각 저장
 spyEls.forEach(function(spyEl){//foreach -> 해당하는요소를 모두 담은 spyEls의 각각 요소(spyEl)에 접근
     //new ScrollMagin.Scene().setClassToggle().addTo();//각SypEl 마다 스크롤매직의 해당 함수 실행
-    new ScrollMagin
+    new ScrollMagic
         .Scene({
             triggerElement: spyEl,//(보여짐 여부를) 감시하려는 각 요소들
             triggerHook: .8 //뷰포트에서 화면의 0.8에 위치한 지점에 트리거엘리먼트가 걸렸을 시 셋클래스토글 실행
         })
-        .setClassToggle()
-        .addTo();
+        .setClassToggle(spyEl, 'show')//토글할 요소, 토글할 클래스 이름(해당 클래스를 넣었다 뻄)
+        .addTo(new ScrollMagic.Controller());//실제로 동작하는 스크롤매직 부분 할당
 });
