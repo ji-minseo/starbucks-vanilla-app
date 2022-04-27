@@ -20,6 +20,8 @@ searchInputEl.addEventListener('blur', function() {
 
 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top')
+
 
 window.addEventListener('scroll', _.throttle(function() {
     if (window.scrollY > 500) {
@@ -29,6 +31,9 @@ window.addEventListener('scroll', _.throttle(function() {
             opacity: 0,
             display: 'none'
         });
+        gsap.to(toTopEl, .2, {
+            x: 0
+        });
     }
     else {
         //배지 보이기
@@ -36,11 +41,22 @@ window.addEventListener('scroll', _.throttle(function() {
             opacity: 1,
             display: 'block'
         });
+        // 상단으로 스크롤 버튼 숨기기!
+        gsap.to(toTopEl, .2, {
+            x: 100
+        });
     }
 
 }, 300));
 //_.throttle(함수, 시간)
 //window.scrollY = 화면상 스크롤 위치
+// 상단으로 스크롤 버튼을 클릭하면,
+toTopEl.addEventListener('click', function () {
+    // 페이지 위치를 최상단으로 부드럽게(0.7초 동안) 이동
+    gsap.to(window, .7, {
+      scrollTo: 0
+    });
+});
 
 
 const fadeEls = document.querySelectorAll('.visual .fade-in');
@@ -76,6 +92,18 @@ new Swiper('.promotion .swiper-container', {
         nextEl: '.promotion .swiper-next'
     }
 });
+new Swiper('.awards .swiper-container', {
+    autoplay: true, 
+    loop: true,
+    spaceBetween: 30,
+    slidesPerView: 5,
+    navigation: {
+        prevEl: '.awards .swiper-prev',
+        nextEl: '.awards .swiper-next'
+    }
+});
+
+
 
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
@@ -128,3 +156,21 @@ spyEls.forEach(function(spyEl){//foreach -> 해당하는요소를 모두 담은 
         .addTo(new ScrollMagic.Controller());//실제로 동작하는 스크롤매직 부분 할당
 });
 //(scroll-spy 클래스가 있는요소가 뷰포트의 .8이상 내려갈 시 show라는 클래스  부착
+
+// 연도계산 
+const thisYear = document.querySelector('.this-year')
+thisYear.textContent = new Date().getFullYear()
+
+
+
+
+
+// // SIDEMENU FOR MOBILE 
+// function openNav() {
+//     document.querySelector(".side-panel").style.width = "250px";
+//   }
+  
+//   /* Set the width of the sidebar to 0 (hide it) */
+//   function closeNav() {
+//     document.querySelector(".side-panel").style.width = "0";
+//   }
